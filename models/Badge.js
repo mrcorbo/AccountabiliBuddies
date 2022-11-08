@@ -27,3 +27,4 @@ Badge.init(
     }
 );
 
+module.exports = Badge;
