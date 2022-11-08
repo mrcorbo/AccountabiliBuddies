@@ -15,9 +15,9 @@ User.hasMany(Goal, {
 User.hasMany(Badge, {
 
 });
-// Products belongToMany Tags (through ProductTag)
-Product.belongsToMany(Tag, {
-  through: ProductTag,
+// Goal belongsToMany User
+Goal.belongsToMany(User, {
+//   through: ProductTag,
 //   foreignKey: 'product_id'
 });
 // Tags belongToMany Products (through ProductTag)
