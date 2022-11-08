@@ -43,6 +43,7 @@
     outline: solid;
     outline-width: 1px;
     outline-color: black;
+    width: 150px;
 }
 
 .tool-tip-name {
