@@ -1,6 +1,18 @@
 const router = require('express').Router();
 const { User, Goal, Badge } = require('../models');
 
+
+// Render main page
+router.get('/', async (req, res) => {
+    const goalData = await Goal.findAll ()
+    console.log(goalData);
+    const goals = goalData.map(goal => goal.get({plain:true}))
+    res.render('homepage', {
+        goals, 
+        logged_in: req.session.logged_in});
+});
+
+
 //Render's login page - once user is logged in than it will redirect to the dashboard page
 router.get('/login', async (req, res) => {
     if (req.session.logged_in) {
@@ -25,4 +37,6 @@ router.get('/dashboard', async (req, res) => {
     res.status(500).json(err);
 }
 });
+
+module.exports = router;
 
