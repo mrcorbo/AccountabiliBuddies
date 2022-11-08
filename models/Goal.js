@@ -17,7 +17,7 @@ Goal.init(
             type: DataTypes.STRING,
             allowNull: false
         },
-        weeklyFreq: {
+        frequency: {
             type: DataTypes.INTEGER,
             allowNull: false
         },
@@ -33,6 +33,12 @@ Goal.init(
             },
 
         },
+    },
+    {
+        sequelize,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'goal',
     }
 );
 
