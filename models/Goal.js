@@ -27,3 +27,5 @@ Goal.init(
         }
     }
 );
+
+module.exports = Goal;
