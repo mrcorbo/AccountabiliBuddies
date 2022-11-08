@@ -1,0 +1,59 @@
+#pfp {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+#username-and-blurb-container {
+    display: inline-block;
+}
+
+.award {
+    width: 400px;
+    height: 400px;
+    background-color:lightgrey;
+    border-radius: 20%;
+}
+
+#badges {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.badge-title, .badge-desc {
+    text-align: center;
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+    background-color:lightgrey;
+    border-radius: 20%;
+    margin-bottom: 20px;
+}
+
+#username {
+    display: inline-block;
+}
+
+.tool-tip {
+    display: none;
+    position: fixed;
+    outline: solid;
+    outline-width: 1px;
+    outline-color: black;
+    width: 150px;
+}
+
+.tool-tip-name {
+    text-decoration: underline;
+}
+
+.icon:hover {
+    background-color: rgb(204, 204, 204);
+}
+
+.icon:hover + .tool-tip {
+    display: inline-block;
+}
