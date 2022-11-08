@@ -28,7 +28,7 @@ class User extends Model {
           validate: {
             len: [8],
           },
-        },
+        }
       },
       //hooks - hash password
       {
