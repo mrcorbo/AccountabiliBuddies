@@ -40,3 +40,23 @@ router.get('/profile', async (req, res) => {
 
 module.exports = router;
 
+// Display user's goal
+
+router.get('/goal/:id', async (req, res) => {
+    try{
+    const goalData = await Goal.findByPk (req.params.id, {
+        include:[
+        {
+          model:User,
+        attributes: ['email'],
+    },
+],
+});
+    const goal = goalData.get({plain: true})
+
+    res.render("goal", {...goal, logged_in: req.session.logged_in
+    });
+} catch (err) {
+    res.status(500).json(err);
+}
+});

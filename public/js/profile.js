@@ -9,7 +9,7 @@ const newGoal = async (event) => {
   
     if (name && frequency && duration) {
       const response = await fetch(`/api/goals`, {
-        method: 'goal',
+        method: 'POST',
         body: JSON.stringify({ name, frequency, duration }),
         headers: {
           'Content-Type': 'application/json',
