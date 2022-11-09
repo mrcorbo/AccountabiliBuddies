@@ -23,3 +23,16 @@
 </form>
 
 </div>
+
+{{#if goals.length}}
+<div>
+    <h3> Accountabilities </h3>
+<div>
+     {{#each goals as |goal| }}
+        {{> goalData goal}}
+    {{/each}}
+
+</div>
+ {{/if}}
+
+  <script src="./js/profile.js"></script>
