@@ -18,12 +18,11 @@
         </button>
       </div>
       <div class="modal-body">
-        <form id="new-goal-form">
-
-          <!-- Form to include the other user's email -->
+        <!-- Form to include the other user's email -->
+        <form id = "buddyEmailForm">
           <div class="form-group">
             <label for="exampleInputEmail1">Buddy's email</label>
-            <input class="form-control" id="newBuddy" name="titleNewPost" aria-describedby="emailHelp"
+            <input class="form-control" id="emailBuddy" name="titleNewPost" aria-describedby="emailHelp"
               placeholder="Enter user's email">
           </div>
           <button type="submit" class="btn btn-primary" id="createBtn">Add</button>
@@ -36,3 +35,10 @@
     </div>
   </div>
 </div>
+
+<div>
+  Buddies:
+  <p id = "userBuddy"></p>
+</div>
+
+<script src="./js/buddy.js"></script>
