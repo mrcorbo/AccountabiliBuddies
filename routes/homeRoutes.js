@@ -60,3 +60,8 @@ router.get('/goal/:id', async (req, res) => {
     res.status(500).json(err);
 }
 });
+
+// display the badge badge page
+router.get('/badges', async (req, res) => {
+    res.render("badges")
+});
