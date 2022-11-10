@@ -61,7 +61,7 @@ router.get('/goal/:id', async (req, res) => {
 }
 });
 
-// display the badge badge page
+// display the badge badge page (to be removed)
 router.get('/badges', async (req, res) => {
     res.render("badges")
 });
