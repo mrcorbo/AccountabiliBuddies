@@ -33,6 +33,10 @@
     margin-bottom: 20px;
 }
 
+#username-holder {
+    display: inline-block;
+}
+
 #username {
     display: inline-block;
 }
@@ -50,10 +54,26 @@
     text-decoration: underline;
 }
 
-.icon:hover {
-    background-color: rgb(204, 204, 204);
-}
-
 .icon:hover + .tool-tip {
     display: inline-block;
+}
+
+.fa-edit {
+    visibility: hidden;
+}
+
+#username-holder:hover .fa-edit {
+    visibility: visible;
+}
+
+.fa-edit:hover {
+    cursor: pointer;
+}
+
+#blurb {
+    display: inline-block;
+}
+
+#blurb-holder:hover .fa-edit {
+    visibility: visible;
 }
