@@ -17,14 +17,28 @@ Goal.init(
             type: DataTypes.STRING,
             allowNull: false
         },
-        weeklyFreq: {
+        frequency: {
             type: DataTypes.INTEGER,
             allowNull: false
         },
         duration: {
             type: DataTypes.INTEGER,
             allowNull:true
-        }
+        },
+        user_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'user',
+                key: 'id',
+            },
+
+        },
+    },
+    {
+        sequelize,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'goal',
     }
 );
 
