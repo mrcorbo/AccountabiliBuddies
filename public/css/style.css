@@ -1,3 +1,5 @@
+/* profile page start */
+
 #pfp {
     width: 200px;
     height: 200px;
@@ -87,4 +89,18 @@
 
 .big-holder {
     display: inline-block;
+}
+
+/* profile page end */
+
+/* login page start */
+
+.login-form {
+    text-align: center;
+    border-radius: 50px;
+}
+
+.form-control {
+    width: 30%;
+    margin: auto;
 }
