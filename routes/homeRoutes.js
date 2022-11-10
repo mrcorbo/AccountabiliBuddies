@@ -66,6 +66,7 @@ router.get('/badges', async (req, res) => {
     res.render("badges")
 });
 
+// forums route
 router.get('/forums', async (req, res) => {
     if (req.session.logged_in) {
         res.redirect('profile');
