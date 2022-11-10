@@ -18,7 +18,7 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active" aria-current="page" href="/">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" href="#">Profile</a>
@@ -35,9 +35,9 @@
                 <form class="container-fluid justify-content-end">
                     <button class="btn btn-outline-info me-2" type="button">Daily Nudge</button>
                     {{#if logged_in}}
-                    <button class="btn btn-outline-info me-2" type="button">Logout</button>
+                    <button class="btn btn-outline-info me-2" type="button" id="logout"><a href="/profile">Logout</a></button>
                     {{else}}
-                    <button class="btn btn-outline-info me-2" type="button">Log In</button>
+                    <button class="btn btn-outline-info me-2" type="button"> <a href="/login">Log In</a> </button>
                     {{/if}}
                 </form>
             </ul>
@@ -46,7 +46,7 @@
     </nav>
    <!-- END NAVBAR-->
     <main>
-
+    {{{ body }}} 
     </main>
 
     {{#if logged_in}}

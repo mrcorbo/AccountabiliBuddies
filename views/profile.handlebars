@@ -1,0 +1,38 @@
+<div >
+    <h2>Welcome, {{email}}!</h2>
+<div>
+
+<div>
+  <h3> Add new Accountability </h3>
+
+<form id="new-goal-form">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Accountability</label>
+    <input class="form-control" id="newGoal" name = "titleNewPost" aria-describedby="emailHelp" placeholder="Enter Accountability">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Frequency</label>
+    <input class="form-control" id="frequency" name="contentNewPost" placeholder="Content">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Duration</label>
+    <input class="form-control" id="duration" name="contentNewPost" placeholder="Content">
+  </div>
+  
+  <button type="submit" class="btn btn-primary" id="createBtn">Create</button>
+</form>
+
+</div>
+
+{{#if goals.length}}
+<div>
+    <h3> Accountabilities </h3>
+<div>
+     {{#each goals as |goal| }}
+        {{> goalData goal}}
+    {{/each}}
+
+</div>
+ {{/if}}
+
+  <script src="./js/profile.js"></script>
