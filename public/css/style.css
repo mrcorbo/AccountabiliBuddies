@@ -104,3 +104,44 @@
     width: 30%;
     margin: auto;
 }
+
+/* login page end */
+
+/* forums page start */
+
+.post {
+    background-color: rgb(241, 241, 241);
+    border-radius: 10px;
+}
+
+#posts {
+    border-radius: 5px;
+}
+
+.post-name:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.pfp {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+}
+
+.pfp:hover {
+    cursor: pointer;
+}
+
+.poster {
+    display: inline-block;
+}
+
+.post {
+    display: inline-block
+}
+
+.poster-username:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}

@@ -65,3 +65,11 @@ router.get('/goal/:id', async (req, res) => {
 router.get('/badges', async (req, res) => {
     res.render("badges")
 });
+
+router.get('/forums', async (req, res) => {
+    if (req.session.logged_in) {
+        res.redirect('profile');
+        return;
+      }
+    res.render("forums")
+});
