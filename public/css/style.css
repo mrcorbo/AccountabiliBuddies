@@ -137,8 +137,9 @@
     display: inline-block;
 }
 
-.post {
-    display: inline-block
+.post-body {
+    display: inline-block;
+    text-align: end;
 }
 
 .poster-username:hover {
