@@ -68,9 +68,14 @@ router.get('/badges', async (req, res) => {
 
 // forums route
 router.get('/forums', async (req, res) => {
-    if (req.session.logged_in) {
-        res.redirect('profile');
+    if (!req.session.logged_in) {
+        res.redirect('login');
         return;
       }
     res.render("forums")
 });
+
+// forums post route
+router.post('/forums', async (req, res) => {
+
+})
