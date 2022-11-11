@@ -12,17 +12,17 @@ Buddy.init(
             autoIncrement: true,
             primaryKey: true,
         },
-        name: {
-            type: DataTypes.STRING,
-            allowNull: false
+              
+        user_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'user',
+                key: 'id',
+            },
+
         },
 
-        user_email: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        
-        user_id: {
+        buddy_id: {
             type: DataTypes.INTEGER,
             references: {
                 model: 'user',

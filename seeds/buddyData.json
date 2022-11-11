@@ -1,17 +1,14 @@
 [{
-    "name": "User2",
-    "user_email": "user2@gmail.com",
-    "user_id": 1
+    "user_id": 1,
+    "buddy_id": 2
 
 },
 {
-    "name": "User3",
-    "user_email": "user3@gmail.com",
-    "user_id": 2
+    "user_id": 2,
+    "buddy_id": 3
 },
 {
-    "name": "User1",
-    "user_email": "user1@gmail.com",
-    "user_id": 3
+    "user_id": 3,
+    "buddy_id": 1
 }
 ]

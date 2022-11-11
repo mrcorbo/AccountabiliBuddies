@@ -86,5 +86,6 @@ router.get('/messages', async (req, res) => {
 
 // display the badge badge page
 router.get('/buddies', async (req, res) => {
+    //find the goal data based of th buddy model
     res.render("buddies")
 });
