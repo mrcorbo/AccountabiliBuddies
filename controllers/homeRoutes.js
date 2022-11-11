@@ -78,3 +78,8 @@ router.get('/messages', async (req, res) => {
       }
     res.render("messages")
 });
+
+// display the badge badge page
+router.get('/buddies', async (req, res) => {
+    res.render("buddies")
+});
