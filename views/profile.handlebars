@@ -1,38 +1,116 @@
-<div >
-    <h2>Welcome, {{email}}!</h2>
-<div>
+<nav class="bg-light m-3">
+    <img class="m-3" id="pfp"
+        src="https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg">
+    <nav id="username-and-blurb-container" class="ml-3">
+        <div>
+            <img class="icon p-1"
+                src="https://www.reshot.com/preview-assets/icons/964QZLRXYM/star-medal-964QZLRXYM.svg">
+            <div class="tool-tip bg-light">
+                <p class="m-1 tool-tip-name">Badge name</p>
+                <p class="m-1">Description of the badge and how it's earned</p>
+            </div>
+            <img class="icon p-1"
+                src="https://www.reshot.com/preview-assets/icons/J7H9K62ZXS/king-crown-J7H9K62ZXS.svg">
+            <div class="tool-tip bg-light">
+                <p class="m-1 tool-tip-name">Second badge name</p>
+                <p class="m-1">Description of the second displayed badge and how it's earned</p>
+            </div>
+            <div id="username-holder">
+                <h1 id="username">Username</h1>
+                <i class="far fa-edit"></i>
+            </div>
+        </div>
+        <div id="blurb-holder">
+            <p id="blurb">This is a blurb/description that a user can write about themselves!</p>
+            <i class="far fa-edit"></i>
+        </div>
+    </nav>
+</nav>
+<!--Badge holder-->
+<nav class="d-flex flex-wrap">
+    <nav class="bg-light m-3 col big-holder">
+        <h2 class="m-3">Badges</h2>
+        <nav id="badges">
+            <div class="award-holder m-3">
+                <img class="award p-2"
+                    src="https://www.reshot.com/preview-assets/icons/TBRQVFYD24/award-TBRQVFYD24.svg">
+                <h4 class="badge-title">Badge Title</h4>
+                <p class="badge-desc">Description of the badge and how it's earned</p>
+            </div>
+            <div class="award-holder m-3">
+                <img class="award p-2"
+                    src="https://www.reshot.com/preview-assets/icons/QGBLDPSM9C/champion-QGBLDPSM9C.svg">
+                <h4 class="badge-title">Badge Title</h4>
+                <p class="badge-desc">Description of the badge and how it's earned</p>
+            </div>
+            <div class="award-holder m-3">
+                <img class="award p-2"
+                    src="https://www.reshot.com/preview-assets/icons/964QZLRXYM/star-medal-964QZLRXYM.svg">
+                <h4 class="badge-title">Badge Title</h4>
+                <p class="badge-desc">Description of the badge and how it's earned</p>
+            </div>
+            <div class="award-holder m-3">
+                <img class="award p-2"
+                    src="https://www.reshot.com/preview-assets/icons/J7H9K62ZXS/king-crown-J7H9K62ZXS.svg">
+                <h4 class="badge-title">Badge Title</h4>
+                <p class="badge-desc">Description of the badge and how it's earned</p>
+            </div>
+            <div class="award-holder m-3">
+                <img class="award p-2"
+                    src="https://www.reshot.com/preview-assets/icons/WF2L4URNG8/medal-WF2L4URNG8.svg">
+                <h4 class="badge-title">Badge Title</h4>
+                <p class="badge-desc">Description of the badge and how it's earned</p>
+            </div>
+        </nav>
+    </nav>
+    <!--Goals Start-->
+    <nav class="bg-light m-3 col big-holder">
+        <h2 class="m-3">Goals</h2>
+        <nav id="new-goal-form">
+            <div id="card-holder" class="d-flex justify-content-center flex-wrap">
+                {{!-- <div class="card m-3" style="width: 18rem;">
+                    <div class="goal-card card-body form-group">
+                        <h5 class="card-title">Add a new goal</h5>
+                        <input type="text" class="card-title mb-3 form-control goal-cards"  id="newGoal" placeholder="Goal Title">
+                        <input type="text" class="card-text mb-3 form-control goal-cards" id="frequency" placeholder="Times per week">
+                        <input type="text" class="card-text mb-3 form-control goal-cards" id="duration" placeholder="Number of weeks">
+                        <button type="submit"><a class="btn btn-primary">+ Add Goal</a></button>
+                    </div>
+                    </div> --}}
+                    <form id="new-goal-form">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">New Goal Name</label>
+                            <input class="form-control" id="newGoal" name="titleNewPost" aria-describedby="emailHelp"
+                                placeholder="Enter Accountability">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Frequency Per Week</label>
+                            <input class="form-control" id="frequency" name="contentNewPost" placeholder="Content">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Duration In Weeks</label>
+                            <input class="form-control" id="duration" name="contentNewPost" placeholder="Content">
+                        </div>
+                    
+                        <button type="submit" class="btn btn-primary" id="createBtn">Create</button>
+                    </form>
 
-<div>
-  <h3> Add new Accountability </h3>
+                {{#if goals.length}}
+                <div id="goalCard">
+                    {{#each goals as |goal| }}
+                    <div class="goal-card card m-3" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title"><a href="/goal/{{id}}">{{name}}</a></h5>
+                            <p class="card-text">{{frequency}} times a week for {{duration}} weeks</p>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+                {{/if}}
+            </div>
+        </nav>
+    </nav>
+</nav>
+<!--Goals End-->
 
-<form id="new-goal-form">
-  <div class="form-group">
-    <label for="exampleInputEmail1">New Goal Name</label>
-    <input class="form-control" id="newGoal" name = "titleNewPost" aria-describedby="emailHelp" placeholder="Enter Accountability">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Frequency Per Week</label>
-    <input class="form-control" id="frequency" name="contentNewPost" placeholder="Content">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Duration In Weeks</label>
-    <input class="form-control" id="duration" name="contentNewPost" placeholder="Content">
-  </div>
-  
-  <button type="submit" class="btn btn-primary" id="createBtn">Create</button>
-</form>
-
-</div>
-
-{{#if goals.length}}
-<div>
-    <h3> Accountabilities </h3>
-<div>
-     {{#each goals as |goal| }}
-        {{> goalData goal}}
-    {{/each}}
-
-</div>
- {{/if}}
-
-  <script src="./js/profile.js"></script>
+<script src="./js/profile.js"></script>

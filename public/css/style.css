@@ -1,3 +1,5 @@
+/* profile page start */
+
 #pfp {
     width: 200px;
     height: 200px;
@@ -9,10 +11,13 @@
 }
 
 .award {
-    width: 400px;
-    height: 400px;
+    width: 200px;
+    height: 200px;
     background-color:lightgrey;
     border-radius: 20%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #badges {
@@ -23,6 +28,10 @@
 
 .badge-title, .badge-desc {
     text-align: center;
+    width: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .icon {
@@ -76,4 +85,59 @@
 
 #blurb-holder:hover .fa-edit {
     visibility: visible;
+}
+
+.big-holder {
+    display: inline-block;
+}
+
+.goal-cards {
+    width: 100%;
+    margin: auto;
+}
+
+.goal-card {
+    height: 260px;
+}
+
+/* profile page end */
+
+/* forums page start */
+
+.post {
+    background-color: rgb(241, 241, 241);
+    border-radius: 10px;
+}
+
+#posts {
+    border-radius: 5px;
+}
+
+.post-name:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.pfp {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+}
+
+.pfp:hover {
+    cursor: pointer;
+}
+
+.poster {
+    display: inline-block;
+    width: 300px;
+}
+
+.post-body {
+    display: inline-block;
+}
+
+.poster-username:hover {
+    cursor: pointer;
+    text-decoration: underline;
 }
