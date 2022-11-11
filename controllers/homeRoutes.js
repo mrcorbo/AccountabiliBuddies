@@ -69,3 +69,12 @@ router.get('/forums', async (req, res) => {
       }
     res.render("forums")
 });
+
+// messages route
+router.get('/messages', async (req, res) => {
+    if (!req.session.logged_in) {
+        res.redirect('login');
+        return;
+      }
+    res.render("messages")
+});
