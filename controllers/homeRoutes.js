@@ -22,6 +22,11 @@ router.get('/login', async (req, res) => {
     res.render("login")
 });
 
+// Render's signup page
+router.get('/signup', (req, res) => {
+    res.render('signup');
+});
+
 // Profile page - includes model Goal - with the user's accountabilities
 
 router.get('/profile', async (req, res) => {

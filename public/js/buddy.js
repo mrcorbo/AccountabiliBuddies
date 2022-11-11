@@ -2,11 +2,11 @@ const buddyForm = async (event) => {
   event.preventDefault();
 
   // Collect email from the email modal
-  const email = document.querySelector('#emailBuddy').value.trim();
+  const email = document.getElementById('emailBuddy').value.trim();
  
   if (email) {
     // Send a POST request to the API endpoint
-    const response = await fetch('/api/users/login', {
+    const response = await fetch('/api/buddies', {
       method: 'POST',
       body: JSON.stringify({ email }),
       headers: { 'Content-Type': 'application/json' },
@@ -14,12 +14,13 @@ const buddyForm = async (event) => {
 
     if (response.ok) {
       // If successful, add the user's email to the page
-      document.querySelector("#userBuddy").text(email);
+      document.getElementById("userBuddy").textContent(email);
+      console.log("user added")
     } else {
       alert(response.statusText);
     }
   }
 };
 document
-    .querySelector('#buddyEmailForm')
-    .addEventListener('submit', loginForm);
+    .getElementById('buddyEmailForm')
+    .addEventListener('submit', buddyForm);
