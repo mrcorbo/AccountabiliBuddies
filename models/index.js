@@ -2,7 +2,7 @@
 const User = require('./User');
 const Goal = require('./Goal');
 const Badge = require('./Badge');
-const Message = require('./Badge');
+const Message = require('./Message');
 
 // Badge belongsToMany User
 Badge.belongsTo(User, {
