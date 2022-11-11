@@ -1,0 +1,60 @@
+<div >
+    <h2>Welcome, {{email}}!</h2>
+<div>
+
+<div>
+  Accountability Buddy
+  {{> buddyData}}
+</div>
+
+<div>
+  <h3> Add new Accountability </h3>
+
+<form id="new-goal-form">
+  <div class="form-group">
+    <label for="exampleInputEmail1">New Goal Name</label>
+    <input class="form-control" id="newGoal" name = "titleNewPost" aria-describedby="emailHelp" placeholder="Enter Accountability">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Frequency Per Week</label>
+    <input class="form-control" id="frequency" name="contentNewPost" placeholder="Content">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Duration In Weeks</label>
+    <input class="form-control" id="duration" name="contentNewPost" placeholder="Content">
+  </div>
+  
+  <button type="submit" class="btn btn-primary" id="createBtn">Create</button>
+</form>
+
+</div>
+
+{{#if goals.length}}
+<div id = "goalCard">
+    <h3> Accountabilities </h3>
+  {{#each goals as |goal| }}
+ <div >
+  <div class="card-deck" >
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title"><a href="/goal/{{id}}">{{name}}</a></h5>
+       <p class="card-text">{{user.email}}</p>
+       <ul class="list-group list-group-flush">
+        <li class="list-group-item">{{frequency}} times/week</li>
+        <li class="list-group-item">{{duration}} weeks</li>
+        <li class="list-group-item">Commit</li>
+      </ul>
+    </div>
+    <div class="card-footer">
+      <a href="#" class="btn btn-primary">Add a Buddy</a>
+        <button><a href="#" class="card-link">Done</a></button>
+        <button class="btn btn-sm btn-danger" data-id="{{goal.id}}">Delete</button>
+    </div>
+  </div>
+ </div>
+    {{/each}}
+</div>
+</div>
+ {{/if}}
+
+  <script src="./js/profile.js"></script>
