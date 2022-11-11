@@ -1,5 +1,4 @@
 const { Model, DataTypes } = require('sequelize');
-const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
 class Buddy extends Model {
@@ -20,11 +19,9 @@ Buddy.init(
 
         user_email: {
             type: DataTypes.STRING,
-            references: {
-                model: 'user',
-                key: 'id',
-            },
+            allowNull: false
         },
+        
         user_id: {
             type: DataTypes.INTEGER,
             references: {
