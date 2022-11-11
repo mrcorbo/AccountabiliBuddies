@@ -65,3 +65,8 @@ router.get('/goal/:id', async (req, res) => {
 router.get('/badges', async (req, res) => {
     res.render("badges")
 });
+
+// display the badge badge page
+router.get('/buddies', async (req, res) => {
+    res.render("buddies")
+});

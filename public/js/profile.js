@@ -24,6 +24,28 @@ const newGoal = async (event) => {
     }
   };
 
+  //Button - Delete Goal 
+
+  const deleteBtn = async (event) => {
+    if (event.target.hasAttribute('data-id')) {
+      const id = event.target.getAttribute('data-id');
+  
+      const response = await fetch(`/api/goals/${id}`, {
+        method: 'DELETE',
+      });
+  
+      if (response.ok) {
+        document.location.replace('/profile');
+      } else {
+        alert('Failed to delete project');
+      }
+    }
+  };
+
   document
   .querySelector('#new-goal-form')
   .addEventListener('submit', newGoal);
+
+  document
+  .querySelector('#goalCard')
+  .addEventListener('click', deleteBtn);
