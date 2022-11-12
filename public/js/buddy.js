@@ -2,14 +2,14 @@ const buddyForm = async (event) => {
   event.preventDefault();
 
   // Collect email from the email modal
-  const name = document.getElementById('nameBuddy').value.trim();
-  const user_email = document.getElementById('emailBuddy').value.trim();
+  //const name = document.getElementById('nameBuddy').value.trim();
+  const email = document.getElementById('emailBuddy').value.trim();
  
-  if (name && user_email) {
+  if (email) {
     // Send a POST request to the API endpoint
     const response = await fetch('/api/buddies', {
       method: 'POST',
-      body: JSON.stringify({ name, user_email }),
+      body: JSON.stringify({ email }),
       headers: { 'Content-Type': 'application/json' },
     });
 

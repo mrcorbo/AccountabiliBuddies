@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Goal, Badge } = require('../models');
+const { User, Goal, Badge, Buddy, Message } = require('../models');
 
 
 // Render main page
@@ -84,8 +84,26 @@ router.get('/messages', async (req, res) => {
     res.render("messages")
 });
 
-// display the badge badge page
+// display buddies page
 router.get('/buddies', async (req, res) => {
-    //find the goal data based of th buddy model
-    res.render("buddies")
+    try{
+    const buddyData = await Buddy.findByPk (req.params.id, {
+        include:[
+        {
+          model:User,
+        attributes: ['email'],
+        model: Goal,
+        attributes: ['name', 'frequency', 'duration']
+    },
+],
 });
+    const buddy = buddyData.get({plain: true})
+
+    res.render("buddies", {...buddy, logged_in: req.session.logged_in
+    })
+} catch (err) {
+    res.status(500).json(err);
+}
+});
+    //find the goal data based of the buddy model
+
