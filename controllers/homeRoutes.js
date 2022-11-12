@@ -43,7 +43,7 @@ router.get('/profile', async (req, res) => {
 }
 });
 
-module.exports = router;
+
 
 // Display user's goal
 
@@ -84,26 +84,29 @@ router.get('/messages', async (req, res) => {
     res.render("messages")
 });
 
+//Display buddy page
+router.get('/buddy', async (req, res) => {
+    if (!req.session.logged_in) {
+        res.redirect('login');
+        return;
+      }
+    res.render("buddy")
+});
+
+
 // display buddies page
-router.get('/buddies', async (req, res) => {
+router.get('/buddy/:id', async (req, res) => {
     try{
-    const buddyData = await Buddy.findByPk (req.params.id, {
-        include:[
-        {
-          model:User,
-        attributes: ['email'],
-        model: Goal,
-        attributes: ['name', 'frequency', 'duration']
-    },
-],
-});
-    const buddy = buddyData.get({plain: true})
-
-    res.render("buddies", {...buddy, logged_in: req.session.logged_in
-    })
-} catch (err) {
-    res.status(500).json(err);
-}
-});
+        const buddyData = await User.findByPk (req.session.user_id, {
+            attributes: {exclude: ['password']},
+            include:[{ model: User}],
+        });
+        const buddy = buddyData.get({plain:true});
+           
+        res.render("buddy", {...buddy, logged_in: true})
+    }catch (err) {
+        res.status(500).json(err);
+    }
+    });
     //find the goal data based of the buddy model
-
+module.exports = router;

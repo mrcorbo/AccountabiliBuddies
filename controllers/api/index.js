@@ -8,7 +8,7 @@ const messageRoutes = require('./messageRoutes');
 
 router.use('/users', userRoutes);
 router.use('/goals', goalRoutes);
-router.use('/buddies', buddyRoutes);
+router.use('/buddy', buddyRoutes);
 router.use('/messages', messageRoutes);
 
 

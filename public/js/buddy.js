@@ -7,7 +7,7 @@ const buddyForm = async (event) => {
  
   if (email) {
     // Send a POST request to the API endpoint
-    const response = await fetch('/api/buddies', {
+    const response = await fetch('/api/buddy', {
       method: 'POST',
       body: JSON.stringify({ email }),
       headers: { 'Content-Type': 'application/json' },
@@ -15,9 +15,11 @@ const buddyForm = async (event) => {
 
     if (response.ok) {
       // If successful, add the user's email to the page
-      document.location.replace('/buddies');
+      //document.location.replace('/buddy');
+      
+      document.getElementById('buddyEmail').textContent = email;
     } else {
-      alert('Failed to create goal');
+      alert('Failed to add buddy');
     }
   }
   }
