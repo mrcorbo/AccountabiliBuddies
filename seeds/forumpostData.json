@@ -1,0 +1,11 @@
+[{
+    "subject": "This is a test",
+    "body": "Today we are programming a forum back-end.",
+    "user_id": "1"
+},
+{
+    "subject": "This is also a test",
+    "body": "If correct, user2@gmail.com should be the user that made this post.",
+    "user_id": "2"
+}   
+]
