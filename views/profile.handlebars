@@ -77,35 +77,38 @@
                         <button type="submit"><a class="btn btn-primary">+ Add Goal</a></button>
                     </div>
                     </div> --}}
-                    <form id="new-goal-form">
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">New Goal Name</label>
-                            <input class="form-control" id="newGoal" name="titleNewPost" aria-describedby="emailHelp"
-                                placeholder="Enter Accountability">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Frequency Per Week</label>
-                            <input class="form-control" id="frequency" name="contentNewPost" placeholder="Content">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Duration In Weeks</label>
-                            <input class="form-control" id="duration" name="contentNewPost" placeholder="Content">
-                        </div>
+                    <div class="goal-card card m-3" style="width: 18rem;">
+                        <div class="card-body">
+                        <form id="new-goal-form">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1"><h5 class="card-title">New Goal Name</h5></label>
+                                <input class="form-control" id="newGoal" name="titleNewPost" aria-describedby="emailHelp"
+                                    placeholder="Enter Accountability">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Frequency Per Week</label>
+                                <input class="form-control" id="frequency" name="contentNewPost" placeholder="Please enter a numeric value">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Duration In Weeks</label>
+                                <input class="form-control" id="duration" name="contentNewPost" placeholder="Please enter a numeric value">
+                            </div>
                     
-                        <button type="submit" class="btn btn-primary" id="createBtn">Create</button>
-                    </form>
+                            <button type="submit" class="btn btn-primary" id="createBtn">Create</button>
+                        </form>
+                        </div>
+                    </div>
 
                 {{#if goals.length}}
-                <div id="goalCard">
                     {{#each goals as |goal| }}
                     <div class="goal-card card m-3" style="width: 18rem;">
                         <div class="card-body">
+                            <a href="#" class="btn btn-primary bg-danger border-danger float-right">X</a>
                             <h5 class="card-title"><a href="/goal/{{id}}">{{name}}</a></h5>
                             <p class="card-text">{{frequency}} times a week for {{duration}} weeks</p>
                         </div>
                     </div>
                     {{/each}}
-                </div>
                 {{/if}}
             </div>
         </nav>
