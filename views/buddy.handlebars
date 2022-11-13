@@ -1,6 +1,6 @@
 <!-- Button trigger modal -->
 
-<div>
+{{!-- <div>
   <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalCenter">
     Add newBuddy
   </button>
@@ -19,7 +19,7 @@
       </div>
       <div class="modal-body">
         <!-- Form to include the other user's email -->
-        <form id = "buddyEmailForm">
+        <form id="buddyEmailForm">
           <div class="form-group">
             <label for="exampleInputEmail1">Buddy's email</label>
             <input class="form-control" id="emailBuddy" name="titleNewPost" aria-describedby="emailHelp"
@@ -38,7 +38,49 @@
 
 <div>
   Buddies:
-  <p id = "userBuddy"></p>
+  <p id="userBuddy"></p>
+</div> --}}
+
+
+<form class="mx-1 mx-md-4" id="buddyEmailForm">
+
+  <div class="d-flex flex-row align-items-center mb-4">
+    <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+    <div class="form-outline flex-fill mb-0">
+      <input type="text" id="emailBuddy" class="form-control" />
+      <label class="form-label" for="form3Example1c">Buddie's Email</label>
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+    <button class="btn btn-outline-info me-2" type="submit">Add</button>
+  </div>
+
+</form>
+
+<div>
+  Buddies:
+
+<div class="card border-light mb-3" style="max-width: 18rem;">
+  <div class="card-header" id="buddyEmail"></div>
+  <div class="card-body">
+    <h5 class="card-title">Accountabilities</h5>
+    <p class="card-text"></p>
+  </div>
 </div>
+  
+</div>
+
+{{!-- 
+{{#if buddy.length}}
+<div id="userBuddy">
+  {{#each buddy as |buddy| }}
+  <div class="goal-card card m-3" style="width: 18rem;">
+    <div class="card-body">
+      <!--<h5 class="card-title"><a href="/user/{{id}}">{{user.email}}</a></h5>-->
+      <h5 class="card-title"><a href="/user/{{id}}">{{email}}</a></h5>
+  {{/each}}
+</div>
+{{/if}} --}}
 
 <script src="./js/buddy.js"></script>

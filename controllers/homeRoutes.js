@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Goal, Badge } = require('../models');
+const { User, Goal, Badge, Buddy, Message } = require('../models');
 
 
 // Render main page
@@ -22,6 +22,11 @@ router.get('/login', async (req, res) => {
     res.render("login")
 });
 
+// Render's signup page
+router.get('/signup', (req, res) => {
+    res.render('signup');
+});
+
 // Profile page - includes model Goal - with the user's accountabilities
 
 router.get('/profile', async (req, res) => {
@@ -38,7 +43,7 @@ router.get('/profile', async (req, res) => {
 }
 });
 
-module.exports = router;
+
 
 // Display user's goal
 
@@ -69,3 +74,39 @@ router.get('/forums', async (req, res) => {
       }
     res.render("forums")
 });
+
+// messages route
+router.get('/messages', async (req, res) => {
+    if (!req.session.logged_in) {
+        res.redirect('login');
+        return;
+      }
+    res.render("messages")
+});
+
+//Display buddy page
+router.get('/buddy', async (req, res) => {
+    if (!req.session.logged_in) {
+        res.redirect('login');
+        return;
+      }
+    res.render("buddy")
+});
+
+
+// display buddies page
+router.get('/buddy/:id', async (req, res) => {
+    try{
+        const buddyData = await User.findByPk (req.session.user_id, {
+            attributes: {exclude: ['password']},
+            include:[{ model: User}],
+        });
+        const buddy = buddyData.get({plain:true});
+           
+        res.render("buddy", {...buddy, logged_in: true})
+    }catch (err) {
+        res.status(500).json(err);
+    }
+    });
+    //find the goal data based of the buddy model
+module.exports = router;
