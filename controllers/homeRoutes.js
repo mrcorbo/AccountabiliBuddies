@@ -102,7 +102,6 @@ router.get('/buddy', async (req, res) => {
     res.render("buddy")
 });
 
-
 // display buddies page
 router.get('/buddy/:id', async (req, res) => {
     try{
