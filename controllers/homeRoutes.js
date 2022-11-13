@@ -75,6 +75,15 @@ router.get('/forums', async (req, res) => {
     res.render("forums")
 });
 
+// single forum route (id will be :id)
+router.get('/forums/id', async (req, res) => {
+    if (!req.session.logged_in) {
+        res.redirect('login');
+        return;
+    }
+    res.render('forumPost')
+})
+
 // messages route
 router.get('/messages', async (req, res) => {
     if (!req.session.logged_in) {
@@ -92,7 +101,6 @@ router.get('/buddy', async (req, res) => {
       }
     res.render("buddy")
 });
-
 
 // display buddies page
 router.get('/buddy/:id', async (req, res) => {
