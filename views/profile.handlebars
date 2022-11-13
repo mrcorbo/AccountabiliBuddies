@@ -107,6 +107,11 @@
                             <h5 class="card-title"><a href="/goal/{{id}}">{{name}}</a></h5>
                             <p class="card-text">{{frequency}} times a week for {{duration}} weeks</p>
                         </div>
+                        
+                    </div>
+                    <div class="text-center">
+                    <button class="btn btn-success pull-right" data-id="{{goal.id}}">Done</button>
+                    <button class="btn btn-danger pull-right" data-id="{{goal.id}}">Delete</button>
                     </div>
                     {{/each}}
                 {{/if}}
