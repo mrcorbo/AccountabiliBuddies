@@ -1,3 +1,22 @@
+/* Login and sign up formatting */
+.form-label {
+    font-family: 'Raleway', sans-serif;
+    color: #124e6b;
+}
+
+#signUp {
+    color: #124e6b;
+    font-family: 'Raleway', sans-serif;
+}
+
+#ACB-title {
+    color: #179fa9;
+}
+
+#NAV_item {
+    color: #124e6b;
+}
+
 /* profile page start */
 
 #pfp {
