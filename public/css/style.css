@@ -116,7 +116,7 @@
 }
 
 .goal-card {
-    height: 260px;
+    height: 340px;
 }
 
 /* profile page end */
@@ -160,3 +160,6 @@
     cursor: pointer;
     text-decoration: underline;
 }
+
+/* forums page end */
+
