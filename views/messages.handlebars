@@ -1,3 +1,4 @@
+
 <div class="list-group">
   <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
     <div class="d-flex w-100 justify-content-between">
@@ -8,3 +9,42 @@
     <small></small>
   </a>
 </div>
+
+<form id="new-message-form">
+<label for="basic-url">Message</label>
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon3">Title</span>
+  </div>
+  <input type="text" class="form-control" id="messageTitle" aria-describedby="basic-addon3">
+</div>
+
+<div class="input-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text">Text area</span>
+  </div>
+  <textarea class="form-control" aria-label="With textarea" id="messageContent"></textarea>
+</div>
+
+<button type="submit" class="btn btn-primary" id="createBtn">Create</button>
+</form>
+
+{{#if messages.length}}
+<div id="messageCard">
+    {{#each messages as |message| }}
+    <div class="goal-card card m-3" style="width: 18rem;">
+        <div class="card-body">
+            <a href="#" class="btn btn-primary bg-danger border-danger float-right">X</a>
+            <h5 class="card-title"><a href="/messages/{{id}}">{{message_title}}</a></h5>
+            <p class="card-text">{{message_content}}</p>
+        </div>
+
+    </div>
+    <div class="text-center"
+        <button class="btn btn-danger pull-right" data-id="{{message.id}}">Delete</button>
+    </div>
+    {{/each}}
+    {{/if}}
+</div>
+
+<script src="./js/message.js"></script>

@@ -18,7 +18,7 @@ router.post("/", withAuth, async (req, res) => {
   }
 });
 
-// Deletes Goal by ID
+// Deletes Friend by ID
 router.delete("/:id", withAuth, async (req, res) => {
   try {
     const friendData = await Friend.destroy({

@@ -87,12 +87,22 @@ router.get('/forums/id', async (req, res) => {
 
 // messages route
 router.get('/messages', async (req, res) => {
-    if (!req.session.logged_in) {
-        res.redirect('login');
-        return;
-      }
-    res.render("messages")
-});
+    try{
+        const messageData = await User.findByPk (req.session.user_id, {
+            attributes: { exclude: ['password'] },
+            include: [{ model: Message }],
+    
+    });
+    
+        const message = messageData.get({plain:true});
+       
+           
+        res.render("messages", {...message, logged_in: req.session.logged_in})
+        
+    }catch (err) {
+        res.status(500).json(err);
+    }
+ });
 
 
 //Display friend page
