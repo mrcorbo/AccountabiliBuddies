@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Goal, Badge, Buddy, Message } = require('../models');
+const { User, Goal, Badge, Friend, Message } = require('../models');
 
 
 // Render main page
@@ -44,7 +44,7 @@ router.get('/profile', async (req, res) => {
 });
 
 
-
+/*
 // Display user's goal
 
 router.get('/goal/:id', async (req, res) => {
@@ -65,6 +65,7 @@ router.get('/goal/:id', async (req, res) => {
     res.status(500).json(err);
 }
 });
+*/
 
 // forums route
 router.get('/forums', async (req, res) => {
@@ -93,28 +94,44 @@ router.get('/messages', async (req, res) => {
     res.render("messages")
 });
 
-//Display buddy page
-router.get('/buddy', async (req, res) => {
-    if (!req.session.logged_in) {
-        res.redirect('login');
-        return;
-      }
-    res.render("buddy")
-});
 
-// display buddies page
-router.get('/buddy/:id', async (req, res) => {
+//Display friend page
+router.get('/friendpage', async (req, res) => {
     try{
-        const buddyData = await User.findByPk (req.session.user_id, {
-            attributes: {exclude: ['password']},
-            include:[{ model: User}],
-        });
-        const buddy = buddyData.get({plain:true});
+        const friendData = await User.findByPk (req.session.user_id, {
+            attributes: { exclude: ['password'] },
+            include: [{ model: Friend }, {model: Goal}],
+    
+    });
+    
+        const friend = friendData.get({plain:true});
+       
            
-        res.render("buddy", {...buddy, logged_in: true})
+        res.render("friendpage", {...friend, logged_in: req.session.logged_in})
+        
     }catch (err) {
         res.status(500).json(err);
     }
     });
-    //find the goal data based of the buddy model
+
+
+
+// display Buddy's info
+/* router.get('/friend/:id', async (req, res) => {
+    try{
+        const friendData = await User.findOne (req.session.user_id, {
+            attributes: {exclude: ['password']},
+            include:[{ model: User}, { model: Goal}],
+        });
+        const friend = friendData.get({plain:true});
+           
+        res.render("friend", {...friend, logged_in: true})
+    }catch (err) {
+        res.status(500).json(err);
+    }
+    });
+    //find the goal data based of the friend model */
+
+       
+
 module.exports = router;
