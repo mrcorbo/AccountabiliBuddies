@@ -44,7 +44,7 @@ router.get('/profile', async (req, res) => {
 });
 
 
-/*
+
 // Display user's goal
 
 router.get('/goal/:id', async (req, res) => {
@@ -65,7 +65,7 @@ router.get('/goal/:id', async (req, res) => {
     res.status(500).json(err);
 }
 });
-*/
+
 
 // forums route
 router.get('/forums', async (req, res) => {
