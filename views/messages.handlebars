@@ -34,13 +34,12 @@
     {{#each messages as |message| }}
     <div class="goal-card card m-3" style="width: 18rem;">
         <div class="card-body">
-            <a href="#" class="btn btn-primary bg-danger border-danger float-right">X</a>
             <h5 class="card-title"><a href="/messages/{{id}}">{{message_title}}</a></h5>
             <p class="card-text">{{message_content}}</p>
         </div>
 
     </div>
-    <div class="text-center"
+    <div class="text-center">
         <button class="btn btn-danger pull-right" data-id="{{message.id}}">Delete</button>
     </div>
     {{/each}}

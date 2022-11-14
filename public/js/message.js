@@ -24,7 +24,28 @@ const newGoal = async (event) => {
     }
   };
 
+  const deleteBtn = async (event) => {
+    if (event.target.hasAttribute("data-id")) {
+      const id = event.target.getAttribute("data-id");
+  
+      const response = await fetch(`/api/messages/${id}`, {
+        method: "DELETE",
+      });
+  
+      if (response.ok) {
+        document.location.replace("/messages");
+      } else {
+        alert("Failed to delete message");
+      }
+    }
+  };
+  
+
 
   document
   .querySelector('#new-message-form')
   .addEventListener('submit', newGoal);
+
+  document
+  .querySelector('#messageCard')
+  .addEventListener('click', deleteBtn);
