@@ -5,12 +5,14 @@ const newGoal = async (event) => {
     const name = document.querySelector('#newGoal').value.trim();
     const frequency = document.querySelector('#frequency').value.trim();
     const duration = document.querySelector('#duration').value.trim();
+    const progress = document.querySelector('#progress').value.trim();
+
 
   
     if (name && frequency && duration) {
       const response = await fetch(`/api/goals`, {
         method: 'POST',
-        body: JSON.stringify({ name, frequency, duration }),
+        body: JSON.stringify({ name, frequency, duration, progress }),
         headers: {
           'Content-Type': 'application/json',
         },
