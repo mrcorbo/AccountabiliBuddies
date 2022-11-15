@@ -1,8 +1,8 @@
+{{!--
 <!-- Button trigger modal -->
-
 <div>
   <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalCenter">
-    Add newBuddy
+    Buddy
   </button>
 </div>
 
@@ -12,21 +12,19 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Add new Buddy</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <!-- Form to include the other user's email -->
-        <form id = "buddyEmailForm">
-          <div class="form-group">
-            <label for="exampleInputEmail1">Buddy's email</label>
-            <input class="form-control" id="emailBuddy" name="titleNewPost" aria-describedby="emailHelp"
-              placeholder="Enter user's email">
-          </div>
-          <button type="submit" class="btn btn-primary" id="createBtn">Add</button>
-        </form>
+        <h5>Buddy {{{user.email}}}</h5>
+        <p>Accountabilities:</p>
+        <ul>
+          <li>{{{goal.name}}}</li>
+          <li>{{{goal.frequency}}}</li>
+          <li>{{{goal.duration}}}</li>
+        </ul>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -34,11 +32,19 @@
       </div>
     </div>
   </div>
-</div>
-
+</div> --}}
 <div>
-  Buddies:
-  <p id = "userBuddy"></p>
-</div>
+<h5 id="friendEmail"> Relation {{id}}</h5>
+<p>Accountabilities:</p>
+<ul>
+  <li> User Id: {{user_id}}</li>
+  <li> Friend Id: {{friend_id}}</li>
+  <li> Id: {{id}}</li>
 
-<script src="./js/buddy.js"></script>
+</ul>
+</div>
+<!--
+  <li>{{goal.name}}</li>
+  <li>{{goal.duration}}</li>
+  <li>{{goal.frequency}}</li>
+ -->

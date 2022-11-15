@@ -1,9 +1,55 @@
+/* index page */
+#index-main {
+    background-color: #124e6b;
+}
+
+/* Login and sign up formatting */
+.form-label {
+    font-family: 'Raleway', sans-serif;
+    color: #124e6b;
+}
+
+#signUp {
+    color: #124e6b;
+    font-family: 'Raleway', sans-serif;
+}
+
+#ACB-title {
+    color: #179fa9;
+}
+
+#NAV_item {
+    color: #124e6b;
+}
+
+/* FAQ page */
+
+#FAQ-text {
+    font-family: 'Raleway', sans-serif;
+    color: #124e6b;
+}
+#FAQ-title-text{
+    font-family: 'Raleway', sans-serif;
+    color: white;
+}
+
+#FAQ-text2{
+    font-family: 'Raleway', sans-serif;
+    color: #123a54;
+}
 /* profile page start */
+#top-container{
+    background-color: #dcfdf5;
+}
 
 #pfp {
     width: 200px;
     height: 200px;
     border-radius: 50%;
+}
+
+#badge-container{
+    background-color: #dcfdf5;
 }
 
 #username-and-blurb-container {
@@ -48,6 +94,7 @@
 
 #username {
     display: inline-block;
+    font-family: 'Raleway', sans-serif;
 }
 
 .tool-tip {
@@ -81,6 +128,7 @@
 
 #blurb {
     display: inline-block;
+    font-family: 'Raleway', sans-serif;
 }
 
 #blurb-holder:hover .fa-edit {
@@ -97,7 +145,7 @@
 }
 
 .goal-card {
-    height: 260px;
+    height: 340px;
 }
 
 /* profile page end */
@@ -141,3 +189,6 @@
     cursor: pointer;
     text-decoration: underline;
 }
+
+/* forums page end */
+
