@@ -22,6 +22,19 @@ router.get('/login', async (req, res) => {
     res.render("login")
 });
 
+// Renders FAQ page
+//router.get('/faq', (req, res) => {
+//    res.render('faq');
+// });
+
+router.get('/faq', async (req, res) => {
+    if (!req.session.logged_in) {
+        res.redirect('login');
+        return;
+      }
+    res.render("faq")
+});
+
 // Render's signup page
 router.get('/signup', (req, res) => {
     res.render('signup');
