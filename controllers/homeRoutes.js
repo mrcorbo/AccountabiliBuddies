@@ -115,7 +115,7 @@ router.get('/friendpage', async (req, res) => {
     try{
         const friendData = await User.findByPk (req.session.user_id, {
             attributes: { exclude: ['password'] },
-            include: [{ model: Friend }, {model: Goal}],
+            include: [{model: Goal}],
     
     });
     

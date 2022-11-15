@@ -89,4 +89,32 @@
   {{/each}}
   </div>
   {{/if}}
+
+  <h5> Goals </h5>
+{{#if goals.length}}
+<div id = "friendCard">
+{{!-- <div id="userfriend"> --}}
+  {{#each goals as |goal| }}
+  <div class="goal-card card m-3" style="width: 18rem;">
+    <div class="card-body">
+      <!--<h5 class="card-title"><a href="/user/{{id}}">{{user.email}}</a></h5>-->
+      {{!-- <h5 class="card-title"><a href="/friend/{{friend.id}}">{{friend.user.email}}</a></h5> --}}
+      <li>{{goal.name}}</li>
+      <li>{{goal.duration}}</li>
+      <li>{{goal.frequency}}</li>
+      {{!-- !-- <p class="card-text">{{friend.goal.name}} = {{friend.goal.frequency}} times a week for
+        {{friend.goal.duration}} weeks</p> -- --}}
+    </div>
+    <button class="btn btn-danger pull-right" data-id="{{goal.id}}">Delete</button>
+  </div>
+  {{/each}}
+  </div>
+  {{/if}}
+
+
+<ul id = "goalFriendList">
+
+</ul>
+
+
  <script src="./js/friend.js"></script>

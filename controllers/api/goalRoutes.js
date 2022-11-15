@@ -16,6 +16,20 @@ router.post("/", withAuth, async (req, res) => {
   }
 });
 
+// Creates new goal - 
+router.get("/:user_id", withAuth, async (req, res) => {
+  try {
+    const arrayGoal = await Goal.findAll({where:{user_id:req.params.user_id}
+    
+    });
+    console.log(arrayGoal);
+    res.status(200).json(arrayGoal);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
+
 // Deletes Goal by ID
 router.delete("/:id", withAuth, async (req, res) => {
   try {

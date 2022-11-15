@@ -30,6 +30,14 @@ Friend.init(
             },
 
         },
+        goal_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'goal',
+                key: 'goal_id',
+            },
+
+        }
     },
     {
         sequelize,
