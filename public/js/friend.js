@@ -43,8 +43,9 @@ const friendForm = async (event) => {
         //var goalList = JSON.stringify(goalsArray[i]);
         //console.log(JSON.stringify(goalsArray));
        
-       var liGoals = document.createElement("li");      
-       liGoals.textContent = ("User email: " + email + " Goal: " + nameGoal + " Frequency: " + frequencyGoal + " time(s) a week "  + " Duration: " + durationGoal + " week(s) ");
+       var liGoals = document.createElement("li");
+             
+       liGoals.textContent = ("User email: " + email + " Goal: " + nameGoal  +" Frequency: " + frequencyGoal +" time(s) a week "  + " Duration: " + durationGoal + " week(s) ");
        document.getElementById("goalFriendList").appendChild(liGoals);
        
       //document.location.replace("/friendpage");
