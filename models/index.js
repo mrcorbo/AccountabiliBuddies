@@ -19,11 +19,11 @@ foreignKey: 'user_id'
 User.hasMany(ForumPost, {
 foreignKey: 'user_id'
 });
-// Comment belongsTo ForumPost
+// ForumComment belongsTo ForumPost
 ForumComment.belongsTo(ForumPost, {
 foreignKey: 'id'
 });
-// Comment belongsTo User
+// ForumComment belongsTo User
 ForumComment.belongsTo(User, {
 foreignKey: 'user_id'
 });

@@ -81,16 +81,6 @@ router.get('/forums', async (req, res) => {
     res.render("forums")
 });
 
-// forums post route
-router.post('/forums', async (req, res) => {
-    try {
-        const forumData = await forumPost.create(req.body);
-        res.status(200).json(forumData);
-      } catch (err) {
-        res.status(400).json(err);
-      }
-});
-
 // single forum route (id will be :id)
 router.get('/forums/id', async (req, res) => {
     if (!req.session.logged_in) {
@@ -98,7 +88,7 @@ router.get('/forums/id', async (req, res) => {
         return;
     }
     res.render('forumPost')
-})
+});
 
 // messages route
 router.get('/messages', async (req, res) => {
