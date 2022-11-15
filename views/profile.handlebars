@@ -106,11 +106,18 @@
                         <div class="card-body">
                             <h5 class="card-title"><a href="/goal/{{id}}">{{name}}</a></h5>
                             <p class="card-text">{{frequency}} times a week for {{duration}} weeks</p>
-                            <div class="text-center">
+                            
+                            <div class="text-center">                        
                                 <button class="btn btn-success pull-right" data-id="{{goal.id}}">Done</button>
                                 <button class="btn btn-danger pull-right" data-id="{{goal.id}}">Delete</button>
+                                <p> Progress </p>
+                            <div class="progress"><div class="progress-bar" role="progressbar" style="width: {{frequency}}%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{frequency}}%</div>
+                            </div>
+                            
                             </div>
                         </div>
+
+                        
                         
                     </div>
                     
