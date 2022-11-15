@@ -34,7 +34,7 @@ Friend.init(
             type: DataTypes.INTEGER,
             references: {
                 model: 'goal',
-                key: 'goal_id',
+                key: 'id',
             },
 
         }

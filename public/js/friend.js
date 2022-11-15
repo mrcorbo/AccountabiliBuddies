@@ -29,16 +29,15 @@ const friendForm = async (event) => {
       if (res.ok){
       console.log("this is a ", res);
       const goalsArray = await res.json();
-      }
-      //document.ElementbyId(')
-      //li
-      // for each
-
-     //unordered list
-
-      // append child usin
-      //document.location.replace("/friendpage");
       
+      for (var i = 0; i < goalsArray.length; i++) 
+        var goalList = goalsArray[i];
+        var liGoals = document.createElement("li");
+        liGoals.textContent = goalList;
+        document.getElementById("goalFriendList").appendChild(liGoals);
+
+      //document.location.replace("/friendpage");
+      }
       }
 
       //document.getElementById('friendEmail').textContent = email;
