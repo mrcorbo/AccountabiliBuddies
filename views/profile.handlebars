@@ -16,7 +16,7 @@
                 <p class="m-1">Description of the second displayed badge and how it's earned</p>
             </div>
             <div id="username-holder">
-                <h1 id="username">Username</h1>
+                <h1 id="username">{{username}}</h1>
                 <i class="far fa-edit"></i>
             </div>
         </div>
@@ -66,6 +66,7 @@
     <!--Goals Start-->
     <nav class="bg-light m-3 col big-holder">
         <h2 class="m-3">Goals</h2>
+        <!--Goal Form -->
         <nav id="new-goal-form">
             <div id="card-holder" class="d-flex justify-content-center flex-wrap">
                 {{!-- <div class="card m-3" style="width: 18rem;">
@@ -83,7 +84,7 @@
                 <div id="goalCard" class="d-flex flex-wrap justify-content-center">
                     <div class="goal-card card m-3" style="width: 18rem;">
                         <div class="card-body">
-                            <form id="new-goal-form">
+                            <form>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">
                                         <h5 class="card-title">New Goal Name</h5>
@@ -92,14 +93,18 @@
                                         aria-describedby="emailHelp" placeholder="Enter Accountability">
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">Frequency Per Week</label>
+                                    <!--<label for="exampleInputPassword1">Frequency Per Week</label>-->
                                     <input class="form-control" id="frequency" name="contentNewPost"
-                                        placeholder="Please enter a numeric value">
+                                        placeholder="Frequency Per Week">
+                            </div>
+                            <div class="form-group">
+                                <!--<label for="exampleInputPassword1">Duration In Weeks</label>-->
+                                <input class="form-control" id="duration" name="contentNewPost" placeholder="Duration In Weeks">
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">Duration In Weeks</label>
-                                    <input class="form-control" id="duration" name="contentNewPost"
-                                        placeholder="Please enter a numeric value">
+                                    <!--<label for="exampleInputPassword1">Progresss - percentage </label>-->
+                                    <input class="form-control" id="progress" name="contentNewPost"
+                                        placeholder="Progress - percentage">
                                 </div>
 
                                 <button type="submit" class="btn btn-primary" id="createBtn">Create</button>
@@ -113,13 +118,22 @@
                         <div class="card-body">
                             <h5 class="card-title"><a href="/goal/{{id}}">{{name}}</a></h5>
                             <p class="card-text">{{frequency}} times a week for {{duration}} weeks</p>
+                            
                             <div class="d-flex justify-content-center">
-                            <div class="text-center del-buttons">
+                            <div class="text-center del-buttons">                        
                                 <button class="btn btn-success pull-right" data-id="{{goal.id}}">Done</button>
                                 <button class="btn btn-danger pull-right" data-id="{{goal.id}}">Delete</button>
+                                <button class="btn btn-success pull-right"> <a href = "/editGoal">Edit</a></button>
+                                <p> Progress </p>
+                            <div class="progress"><div class="progress-bar" role="progressbar" style="width: {{progress}}%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{progress}}%</div>
+                            </div>
+                            
+                            </div>
                             </div>
                             </div>
                         </div>
+
+                        
                     </div>
                     {{/each}}
                     {{/if}}
