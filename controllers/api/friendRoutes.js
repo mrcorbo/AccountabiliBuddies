@@ -2,7 +2,7 @@ const router = require("express").Router();
 const { Friend, User } = require("../../models");
 const withAuth = require("../../utils/auth");
 
-// 
+// Finds a user based on the email input 
 router.post("/", withAuth, async (req, res) => {
 
   try {

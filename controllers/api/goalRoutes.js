@@ -16,7 +16,7 @@ router.post("/", withAuth, async (req, res) => {
   }
 });
 
-// Creates new goal - 
+// Find goals by user_id
 router.get("/:user_id", withAuth, async (req, res) => {
   try {
     const arrayGoal = await Goal.findAll({where:{user_id:req.params.user_id}
@@ -30,7 +30,6 @@ router.get("/:user_id", withAuth, async (req, res) => {
 });
 
 // Edits Goals - put route
-
 router.put ("/:id",  withAuth, async (req, res) => {
   try {
   const goalData = await Goal.update(req.body, {
