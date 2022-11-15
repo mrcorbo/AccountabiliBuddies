@@ -4,15 +4,18 @@ const editGoal= async (event) => {
     const name = document.getElementById('newGoal').value.trim();
     const frequency = document.getElementById('frequency').value.trim();
     const duration = document.getElementById('duration').value.trim();
-    //const progress = document.querySelector('input[name="content"]').value.trim();
-    console.log(title);
-    console.log(content);
+    //const progress = document.getElementById('progress').value.trim();
+    console.log(name);
+    console.log(frequency);
+    console.log(duration);
 
     const id = window.location.toString().split('/')[
       window.location.toString().split('/').length - 1
     ];
+ 
+    const goal = await response.json();
       
-      const response = await fetch(`/api/goals/${id}`, {
+      const response = await fetch(`/api/goals/${goal.id}`, {
         method: 'PUT',
         body: JSON.stringify({
           post_id: id,
@@ -33,4 +36,4 @@ const editGoal= async (event) => {
 
 }
 
-document.querySelector('.edit-goal-form').addEventListener('submit', editFormHandler);
+document.querySelector('.edit-goal-form').addEventListener('submit', editGoal);

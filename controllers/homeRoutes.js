@@ -52,7 +52,7 @@ router.get('/profile', async (req, res) => {
 
 // Display user's goal
 
-router.get('/goal/:id', async (req, res) => {
+router.get('/goals/:id', async (req, res) => {
     try{
     const goalData = await Goal.findByPk (req.params.id, {
         include:[
@@ -129,7 +129,25 @@ router.get('/friendpage', async (req, res) => {
     }
     });
 
+// single forum route (id will be :id)
 
+router.get('/editGoal', async (req, res) => {
+    try{
+        const editData = await User.findByPk (req.session.user_id, {
+            attributes: { exclude: ['password'] },
+            include: [{model: Goal}],
+    
+    });
+    
+        const edit = editData.get({plain:true});
+       
+           
+        res.render("editGoal", {...edit, logged_in: req.session.logged_in})
+        
+    }catch (err) {
+        res.status(500).json(err);
+    }
+    });
 
 // display Buddy's info
 /* router.get('/friend/:id', async (req, res) => {

@@ -2,6 +2,7 @@
     "name": "Gym User1",
     "frequency": 1,
     "duration": 1,
+    "progress": 40,
     "user_id": 1
 
 },
@@ -9,12 +10,14 @@
     "name": "Gym User2",
     "frequency": 2,
     "duration": 2,
+    "progress": 80,
     "user_id": 2
 },
 {
     "name": "Gym User3",
     "frequency": 3,
     "duration": 3,
+    "progress": 40,
     "user_id": 3
 },
 
@@ -22,6 +25,7 @@
     "name": "Work User1",
     "frequency": 1,
     "duration": 1,
+    "progress": 80,
     "user_id": 1
 
 },
@@ -30,6 +34,7 @@
     "name": "Work User2",
     "frequency": 2,
     "duration": 2,
+    "progress": 40,
     "user_id": 2
 
 },
@@ -38,6 +43,7 @@
     "name": "Work User3",
     "frequency": 3,
     "duration": 3,
+    "progress": 80,
     "user_id": 3
 
 }
