@@ -1,20 +1,44 @@
 [{
-    "name": "GoalName1",
+    "name": "Gym User1",
     "frequency": 1,
-    "duration": 5,
+    "duration": 1,
     "user_id": 1
 
 },
 {
-    "name": "GoalName2",
+    "name": "Gym User2",
     "frequency": 2,
-    "duration": 4,
+    "duration": 2,
     "user_id": 2
 },
 {
-    "name": "GoalName3",
+    "name": "Gym User3",
     "frequency": 3,
     "duration": 3,
     "user_id": 3
+},
+
+{
+    "name": "Work User1",
+    "frequency": 1,
+    "duration": 1,
+    "user_id": 1
+
+},
+
+{
+    "name": "Work User2",
+    "frequency": 2,
+    "duration": 2,
+    "user_id": 2
+
+},
+
+{
+    "name": "Work User3",
+    "frequency": 3,
+    "duration": 3,
+    "user_id": 3
+
 }
 ]

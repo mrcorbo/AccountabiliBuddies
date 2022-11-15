@@ -20,32 +20,48 @@ const friendForm = async (event) => {
      const user = await response.json();
      console.log(user);
       //Get the goals from the user's buddy
-      const res = await fetch(`/api/goals/${user.user_id}`, { 
+      const res = await fetch(`/api/goals/${user.friend_id}`, { 
         method: "GET",
         headers: { "Content-Type": "application/json" },
+        
       });
-
+      
      console.log("goals added");
       if (res.ok){
       console.log("this is a ", res);
       const goalsArray = await res.json();
-      
-      for (var i = 0; i < goalsArray.length; i++) 
-        var goalList = goalsArray[i];
-        var liGoals = document.createElement("li");
-        liGoals.textContent = goalList;
-        document.getElementById("goalFriendList").appendChild(liGoals);
-
+      console.log(goalsArray);
+      //document.getElementById("goalFriendList").innerHTML = "";
+      for (var i = 0; i < goalsArray.length; i++){
+      var nameGoal =  goalsArray[i].name;
+      console.log(nameGoal);
+      var frequencyGoal = goalsArray[i].frequency;
+      console.log(frequencyGoal);
+      var durationGoal = goalsArray[i].duration;
+      console.log(durationGoal);
+         //var goalList = goalsArray[i];
+        //var goalList = JSON.stringify(goalsArray[i]);
+        //console.log(JSON.stringify(goalsArray));
+       
+       var liGoals = document.createElement("li");      
+       liGoals.textContent = ("User email: " + email + " Goal: " + nameGoal + " Frequency: " + frequencyGoal + " time(s) a week "  + " Duration: " + durationGoal + " week(s) ");
+       document.getElementById("goalFriendList").appendChild(liGoals);
+       
       //document.location.replace("/friendpage");
       }
       }
-
-      //document.getElementById('friendEmail').textContent = email;
+    }
+      
     } else {
       alert("This user does not exist in the database.");
     }
   };
 
+  document
+  .getElementById("friendEmailForm")
+  .addEventListener("submit", friendForm);
+
+  /*
 const deleteBtn = async (event) => {
   if (event.target.hasAttribute("data-id")) {
     const id = event.target.getAttribute("data-id");
@@ -61,11 +77,12 @@ const deleteBtn = async (event) => {
     }
   }
 };
+*/
 
-document
-  .getElementById("friendEmailForm")
-  .addEventListener("submit", friendForm);
 
+
+/*
 document
   .getElementById("friendCard")
-  .addEventListener("click", deleteBtn);
+  .addEventListener("click", deleteBtn)
+*/
