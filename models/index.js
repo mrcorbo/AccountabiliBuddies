@@ -28,7 +28,7 @@ ForumComment.belongsTo(User, {
 foreignKey: 'user_id'
 });
 // ForumPost hasMany Comment
-ForumPost.hasMany(Comment, {
+ForumPost.hasMany(ForumComment, {
   foreignKey: 'id'
 });
 // User hasMany Goal
