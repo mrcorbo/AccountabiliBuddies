@@ -29,6 +29,22 @@ router.get("/:user_id", withAuth, async (req, res) => {
   }
 });
 
+// Edits Goals - put route
+
+router.put ("/:id",  withAuth, async (req, res) => {
+  try {
+  const goalData = await Goal.update(req.body, {
+    where: {
+      id: req.params.id,
+    },
+  });
+  res.status(200).json(goalData);
+}catch (err) {
+  res.status(400).json(err);
+
+  }
+});
+  
 
 // Deletes Goal by ID
 router.delete("/:id", withAuth, async (req, res) => {
