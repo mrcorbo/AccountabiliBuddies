@@ -104,16 +104,16 @@
                     {{#each goals as |goal| }}
                     <div class="goal-card card m-3" style="width: 18rem;">
                         <div class="card-body">
-                            <a href="#" class="btn btn-primary bg-danger border-danger float-right">X</a>
                             <h5 class="card-title"><a href="/goal/{{id}}">{{name}}</a></h5>
                             <p class="card-text">{{frequency}} times a week for {{duration}} weeks</p>
+                            <div class="text-center">
+                                <button class="btn btn-success pull-right" data-id="{{goal.id}}">Done</button>
+                                <button class="btn btn-danger pull-right" data-id="{{goal.id}}">Delete</button>
+                            </div>
                         </div>
                         
                     </div>
-                    <div class="text-center">
-                    <button class="btn btn-success pull-right" data-id="{{goal.id}}">Done</button>
-                    <button class="btn btn-danger pull-right" data-id="{{goal.id}}">Delete</button>
-                    </div>
+                    
                     {{/each}}
                 {{/if}}
             </div>

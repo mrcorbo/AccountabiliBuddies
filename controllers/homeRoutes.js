@@ -30,6 +30,11 @@ router.get('/signup', (req, res) => {
 // Profile page - includes model Goal - with the user's accountabilities
 
 router.get('/profile', async (req, res) => {
+    if (!req.session.logged_in) {
+        res.redirect('login');
+        return;
+    }
+
     try{
     const userData = await User.findByPk (req.session.user_id, {
         attributes: {exclude: ['password']},
