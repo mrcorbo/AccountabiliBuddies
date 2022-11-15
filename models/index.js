@@ -5,7 +5,7 @@ const Badge = require('./Badge');
 const ForumPost = require('./ForumPost');
 const ForumComment = require('./ForumComment');
 const Message = require('./Message');
-const Buddy = require('./Buddy');
+const Friend = require('./Friend');
 
 // Badge belongsToMany User
 Badge.belongsTo(User, {
@@ -55,14 +55,14 @@ Message.belongsTo(User, {
   foreignKey: 'user_id'
 });
 
-//Buddy relations
+//Friend relations
 
-User.hasMany(Buddy, {
+User.hasMany(Friend, {
   foreignKey: 'user_id'
 
 });
 
-Buddy.belongsTo (User, {
+Friend.belongsTo (User, {
   foreignKey: 'user_id'
 });
 
@@ -75,5 +75,5 @@ module.exports = {
   ForumComment,
   User,
   Message,
-  Buddy
+  Friend
 };
