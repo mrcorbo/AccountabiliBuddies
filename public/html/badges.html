@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
     <link rel="stylesheet" href="../css/sidebar.css">
     <link rel="stylesheet" href="../css/style.css">
@@ -37,52 +40,52 @@
         </div>
     <div class="content">
         <!-- NAVBAR-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">A | C | B</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-              <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link active" href="#">Profile</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link active" href="#">Forums</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link active" href="#">Inbox</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link active" href="#">About</a>
-              </li>
-              <form class="container-fluid justify-content-end">
-                  <button class="btn btn-outline-info me-2" type="button">Daily Nudge</button>
-                  <button class="btn btn-outline-info me-2" type="button">Log In</button>
-              </form>
-          </ul>
-        </div>
-      </div>
-  </nav>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" id="ACB-title" href="#">A | C | B</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" id=NAV_item aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" id=NAV_item href="#">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" id=NAV_item href="#">Forums</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" id=NAV_item href="#">Inbox</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" id=NAV_item href="#">About</a>
+                    </li>
+                    <form class="container-fluid justify-content-end">
+                        <button class="btn btn-outline-info me-2" type="button">Daily Nudge</button>
+                        <button class="btn btn-outline-info me-2" type="button">Log In</button>
+                    </form>
+                </ul>
+              </div>
+            </div>
+        </nav>
   <!-- END NAVBAR-->
   
   <!-- MAIN BODY -->
-  <nav class="bg-light m-3">
+  <nav class="m-3" id="top-container">
       <img class="m-3" id="pfp" src="https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg">
       <nav id="username-and-blurb-container" class="ml-3">
           <div>
               <img class="icon p-1" src="https://www.reshot.com/preview-assets/icons/964QZLRXYM/star-medal-964QZLRXYM.svg">
               <div class="tool-tip bg-light">
-                  <p class="m-1 tool-tip-name">Badge name</p>
-                  <p class="m-1">Description of the badge and how it's earned</p>
+                  <p class="m-1 tool-tip-name" id="badge-text">Badge name</p>
+                  <p class="m-1"id="badge-text">Description of the badge and how it's earned</p>
               </div>
               <img class="icon p-1" src="https://www.reshot.com/preview-assets/icons/J7H9K62ZXS/king-crown-J7H9K62ZXS.svg">
               <div class="tool-tip bg-light">
-                  <p class="m-1 tool-tip-name">Second badge name</p>
+                  <p class="m-1 tool-tip-name"id="badge-text">Second badge name</p>
                   <p class="m-1">Description of the second displayed badge and how it's earned</p>
               </div>
               <div id="username-holder">
@@ -96,7 +99,7 @@
           </div>
       </nav>
   </nav>
-  <nav class="bg-light m-3">
+  <nav class="m-3" id="badge-container">
       <h2 class="m-3">Badges</h2>
       <nav id="badges">
           <div class="award-holder m-3">
