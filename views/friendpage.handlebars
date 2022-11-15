@@ -42,51 +42,66 @@
 </div> --}}
 
 
-<form class="mx-1 mx-md-4" id="friendEmailForm">
-
-  <div class="d-flex flex-row align-items-center mb-4">
-    <i class="fas fa-user fa-lg me-3 fa-fw"></i>
-    <div class="form-outline flex-fill mb-0">
-      <input type="text" id="emailFriend" class="form-control" />
-      <label class="form-label" for="form3Example1c">Buddie's Email</label>
-    </div>
-  </div>
-
-  <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-    <button class="btn btn-outline-info me-2" type="submit">Add</button>
-  </div>
-
-</form>
-
 {{!-- <div>
   Buddies:
 
-  <div class="card border-light mb-3" style="max-width: 18rem;">
+  <div class="card border-info mb-3" style="max-width: 18rem;">
     <div class="card-header" id="friendEmail"></div>
     <div class="card-body">
-      <h5 class="card-title">Accountabilities</h5>
+      <h5 class="card-title" id="goalHeader">Accountabilities</h5>
+      <ul id="goalFriendList"></ul>
       <p class="card-text"></p>
     </div>
   </div>
 
 </div> --}}
 
-<h5> Buddies </h5>
-{{#if friends.length}}
-<div id = "friendCard">
-{{!-- <div id="userfriend"> --}}
-  {{#each friends as |friend| }}
-  <div class="goal-card card m-3" style="width: 18rem;">
-    <div class="card-body">
-      <!--<h5 class="card-title"><a href="/user/{{id}}">{{user.email}}</a></h5>-->
-      {{!-- <h5 class="card-title"><a href="/friend/{{friend.id}}">{{friend.user.email}}</a></h5> --}}
-      {{> friend}}
-      {{!-- !-- <p class="card-text">{{friend.goal.name}} = {{friend.goal.frequency}} times a week for
-        {{friend.goal.duration}} weeks</p> -- --}}
+
+<div class="jumbotron">
+  <h1 class="display-4">Checkout your Buddy's Goals and Progress </h1>
+  <p class="lead"></p>
+
+  <!--User input - buddy's email" -->
+  <form class="mx-1 mx-md-4" id="friendEmailForm">
+
+    <div class="d-flex flex-row align-items-center mb-4">
+      <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+      <div class="form-outline flex-fill mb-0">
+        <input type="text" id="nameFriend" class="form-control" />
+        <label class="form-label" for="form3Example1c">Buddy's Name</label>
+      </div>
     </div>
-    <button class="btn btn-danger pull-right" data-id="{{friend.id}}">Delete</button>
+
+    <div class="d-flex flex-row align-items-center mb-4">
+      <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+      <div class="form-outline flex-fill mb-0">
+        <input type="email" id="emailFriend" class="form-control" />
+        <label class="form-label" for="form3Example1c">Buddy's Email</label>
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+      <button class="btn btn-outline-info me-2" type="submit">Add</button>
+    </div>
+
+  </form>
+  <hr class="my-4">
+  <div class="card border-info mb-3" style="max-width:auto;">
+    <div class="card-header" id="friendEmail">
+      <h5 class="card-title" id="goalHeader">Accountabilities</h5>
+    </div>
+    <div class="card-body">
+      <ul id="goalFriendList"></ul>
+      <p class="card-text"></p>
+    </div>
   </div>
-  {{/each}}
-  </div>
-  {{/if}}
- <script src="./js/friend.js"></script>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="/friendpage" role="button">Clear</a>
+  </p>
+</div>
+
+
+
+
+
+<script src="./js/friend.js"></script>
