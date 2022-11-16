@@ -148,6 +148,11 @@
     height: 340px;
 }
 
+.del-buttons {
+    position: absolute;
+    bottom: 10px;
+}
+
 /* profile page end */
 
 /* forums page start */
