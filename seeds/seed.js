@@ -6,7 +6,7 @@ const goalData = require('./goalData.json');
 const badgeData = require('./badgeData.json');
 const messageData = require('./messageData.json');
 const friendData = require('./friendData.json');
-const forumData = require('./forumData.json');
+const forumData = require('./forumPostData.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
