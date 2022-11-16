@@ -13,7 +13,7 @@ This application enables the user to create personal goals and save them on thei
 
 ## Preview
 
- ![Preview](assets/screenshots/Capture1.PNG)
+ ![Preview](assets/screenshots/Capture1.png)
 
 # Features:
 
