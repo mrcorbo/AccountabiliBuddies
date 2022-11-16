@@ -148,8 +148,7 @@ router.get('/friendpage', async (req, res) => {
     }
     });
 
-// single forum route (id will be :id)
-
+// display editGoal page
 router.get('/editGoal', async (req, res) => {
     try{
         const editData = await User.findByPk (req.session.user_id, {
