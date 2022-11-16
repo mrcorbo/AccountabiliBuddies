@@ -9,10 +9,11 @@ router.post("/", withAuth, async (req, res) => {
     const friend = await User.findOne({where:{email:req.body.email}})
     const addNewFriend = await Friend.create({
       friend_id: friend.id,
+
       user_id: req.session.user_id,
     });
-
-    res.status(200).json(addNewFriend);
+  
+   res.status(200).json(addNewFriend);
   } catch (err) {
     res.status(400).json(err);
   }
