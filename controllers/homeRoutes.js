@@ -22,6 +22,19 @@ router.get('/login', async (req, res) => {
     res.render("login")
 });
 
+// Renders FAQ page
+//router.get('/faq', (req, res) => {
+//    res.render('faq');
+// });
+
+router.get('/faq', async (req, res) => {
+    if (!req.session.logged_in) {
+        res.redirect('login');
+        return;
+      }
+    res.render("faq")
+});
+
 // Render's signup page
 router.get('/signup', (req, res) => {
     res.render('signup');
@@ -37,7 +50,7 @@ router.get('/profile', async (req, res) => {
 
     try{
     const userData = await User.findByPk (req.session.user_id, {
-        attributes: {exclude: ['password']},
+        attributes:{include: 'username', exclude: ['password']},
         include:[{ model: Goal}],
     });
     const user = userData.get({plain:true});
@@ -52,7 +65,7 @@ router.get('/profile', async (req, res) => {
 
 // Display user's goal
 
-router.get('/goal/:id', async (req, res) => {
+router.get('/goals/:id', async (req, res) => {
     try{
     const goalData = await Goal.findByPk (req.params.id, {
         include:[
@@ -121,7 +134,7 @@ router.get('/friendpage', async (req, res) => {
     try{
         const friendData = await User.findByPk (req.session.user_id, {
             attributes: { exclude: ['password'] },
-            include: [{ model: Friend }, {model: Goal}],
+            include: [{model: Goal}],
     
     });
     
@@ -135,7 +148,25 @@ router.get('/friendpage', async (req, res) => {
     }
     });
 
+// single forum route (id will be :id)
 
+router.get('/editGoal', async (req, res) => {
+    try{
+        const editData = await User.findByPk (req.session.user_id, {
+            attributes: { exclude: ['password'] },
+            include: [{model: Goal}],
+    
+    });
+    
+        const edit = editData.get({plain:true});
+       
+           
+        res.render("editGoal", {...edit, logged_in: req.session.logged_in})
+        
+    }catch (err) {
+        res.status(500).json(err);
+    }
+    });
 
 // display Buddy's info
 /* router.get('/friend/:id', async (req, res) => {
