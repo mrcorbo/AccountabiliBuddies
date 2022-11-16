@@ -1,10 +1,11 @@
+{{!-- bleh --}}
 <h1 class="m-3">Forums</h1>
 
 {{!-- <nav id="posts" class="bg-light m-3 p-1">
     <nav class="post p-3 m-3 d-flex">
         <nav class="poster text-center">
             <img class="pfp" src="https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg">
-            <h5 class="poster-username">Poster Username</h5>
+            <h5 class="poster-username">{{user.email}}</h5>
         </nav>
         <nav class="post-body">
             <h2 class="post-name">Post name to be rendered here</h2>
@@ -22,19 +23,20 @@
         </nav>
     </nav>
 </nav> --}}
-
+{{#if ForumPosts.length}}
+{{#each ForumPosts as |ForumPost| }}
 <div class="card m-3 bg-light" style="width: 95%;">
     <nav class="poster text-center  mr-3 mt-3">
         <img class="pfp" src="https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg">
-        <h5 class="poster-username">Poster Username</h5>
+        <h5 class="poster-username">{{user_id}}</h5>
     </nav>
     <div class="card-body">
-        <h5 class="card-title post-name">Post Title to be rendered here</h5>
-        <p class="card-text">Post text to be rendered here.
-            gjklhashgskjlaghsjkahgjkshgjksdgjksdglsjdgsjkldhgksjlhgklsjdhgkljsdhgklhsgh</p>
+        <h5 class="card-title post-name">{{subject}}</h5>
+        <p class="card-text">{{body}}</p>
     </div>
 </div>
-
+{{/each}}
+{{/if}}
 <div class="card m-3 bg-light" style="width: 95%;">
     <nav class="poster text-center  mr-3 mt-3">
         <img class="pfp" src="https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg">
