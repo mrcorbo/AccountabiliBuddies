@@ -1,27 +1,35 @@
+{{#each goals as |goal| }}
 <div class="edit-goal-form card m-3" style="width: 18rem;">
     <div class="card-body">
         <form id="new-goal-form">
             <div class="form-group">
-                <label for="exampleInputEmail1">
+                
                     <h5 class="card-title">Edit Goal </h5>
                 </label>
                 <input class="form-control" id="newGoal" name="titleNewPost"  value="{{goal.name}}" aria-describedby="emailHelp"
-                    placeholder="Enter Accountability">
+                    placeholder="{{goal.name}}">
             </div>
             <div class="form-group">
-                <label for="exampleInputPassword1">Frequency Per Week</label>
+                
                 <input class="form-control" id="frequency" value="{{goal.frequency}}" name="contentNewPost"
-                    placeholder="Please enter a numeric value">
+                    placeholder="{{goal.frequency}}">
             </div>
             <div class="form-group">
-                <label for="exampleInputPassword1">Duration In Weeks</label>
+                
                 <input class="form-control" id="duration" name="contentNewPost" value="{{goal.duration}}"
-                    placeholder="Please enter a numeric value">
+                    placeholder="{{goal.duration}}">
+            </div>
+
+            <div class="form-group">
+                
+                <input class="form-control" id="progress" name="contentNewPost" value="{{goal.progress}}"
+                    placeholder="{{goal.progress}}">
             </div>
 
             <button type="submit" class="btn btn-primary" id="createBtn">Confirm</button>
         </form>
     </div>
 </div>
+{{/each}}
 
 <script src="./js/goal.js"></script>

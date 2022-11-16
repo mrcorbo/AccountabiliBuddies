@@ -4,7 +4,8 @@ const editGoal= async (event) => {
     const name = document.getElementById('newGoal').value.trim();
     const frequency = document.getElementById('frequency').value.trim();
     const duration = document.getElementById('duration').value.trim();
-    //const progress = document.getElementById('progress').value.trim();
+    const progress = document.getElementById('progress').value.trim();
+    
     console.log(name);
     console.log(frequency);
     console.log(duration);
@@ -13,15 +14,16 @@ const editGoal= async (event) => {
       window.location.toString().split('/').length - 1
     ];
  
-    const goal = await response.json();
+    
       
-      const response = await fetch(`/api/goals/${goal.id}`, {
+      const response = await fetch(`/api/goals/${id}`, {
         method: 'PUT',
         body: JSON.stringify({
-          post_id: id,
+          goal_id: id,
           name,
           frequency,
-          duration
+          duration,
+          progress
         }),
         headers: {
           'Content-Type': 'application/json'
@@ -29,7 +31,7 @@ const editGoal= async (event) => {
       });
       
       if (response.ok) {
-        document.getElementById.replace('goalcard');
+        document.location.replace('/profile');
       } else {
         alert(response.statusText);
       }

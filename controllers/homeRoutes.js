@@ -144,7 +144,7 @@ router.get('/friendpage', async (req, res) => {
 
 // single forum route (id will be :id)
 
-router.get('/editGoal', async (req, res) => {
+router.get('/edit', async (req, res) => {
     try{
         const editData = await User.findByPk (req.session.user_id, {
             attributes: { exclude: ['password'] },
@@ -155,7 +155,7 @@ router.get('/editGoal', async (req, res) => {
         const edit = editData.get({plain:true});
        
            
-        res.render("editGoal", {...edit, logged_in: req.session.logged_in})
+        res.render("edit", {...edit, logged_in: req.session.logged_in})
         
     }catch (err) {
         res.status(500).json(err);
