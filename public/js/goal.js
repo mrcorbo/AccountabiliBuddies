@@ -9,12 +9,13 @@ const editGoal= async (event) => {
     console.log(frequency);
     console.log(duration);
 
+    // get the user id 
     const id = window.location.toString().split('/')[
       window.location.toString().split('/').length - 1
     ];
  
     const goal = await response.json();
-      
+    // PUT request to update the information
       const response = await fetch(`/api/goals/${goal.id}`, {
         method: 'PUT',
         body: JSON.stringify({

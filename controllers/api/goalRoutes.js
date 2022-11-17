@@ -16,7 +16,7 @@ router.post("/", withAuth, async (req, res) => {
   }
 });
 
-// Creates new goal - 
+// Get all the goals information associated with the user id 
 router.get("/:user_id", withAuth, async (req, res) => {
   try {
     const arrayGoal = await Goal.findAll({where:{user_id:req.params.user_id}
