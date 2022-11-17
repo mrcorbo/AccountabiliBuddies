@@ -14,6 +14,9 @@ This application enables the user to create personal goals and save them on thei
 ## Preview
 
  ![Preview](assets/screenshots/Capture1.png)
+ 
+ ## Link to application:
+ https://accountabili-buddies.herokuapp.com/
 
 # Features:
 
