@@ -56,16 +56,21 @@ The Buddies page shows goals information from other users. Once the user input's
   https://opensource.org/licenses/MIT
 
  ## Contributing
-  Please feel free to send a pull request, the following is my GitHub account: 
-  https://github.com/Renatatims
+  Please feel free to send us a pull request, the following is our GitHub account: 
+  - Hayley Briggs - https://github.com/Briggoh
+  - James Arenella - https://github.com/jarenella
+  - Michael Corbo - https://github.com/mrcorbo
+  - Renata Rondon - https://github.com/Renatatims
 
   ## Tests
   Please make sure the inquirer is installed. Once the node_modules are downloaded, then you can run the application by typing 'node server' in the terminal, or npm start.
 
   ## Questions
-  If you have any questions please contact me at:
-   - GitHub account:https://github.com/Renatatims
-   - e-mail account: renatatims@gmail.com
+  If you have any questions please contact us at:
+  - Hayley Briggs - https://github.com/Briggoh
+  - James Arenella - https://github.com/jarenella
+  - Michael Corbo - https://github.com/mrcorbo
+  - Renata Rondon - https://github.com/Renatatims
 
   ## Credits
   This application was built by the following users:
